@@ -10,8 +10,12 @@ class TableRow extends Component {
     }
 
     delete() {
-        axios.get('http://localhost:4000/admin/'+this.props.admin.username)
-            .then(console.log('Deleted'))
+        axios.delete('http://localhost:4000/admin/'+this.props.admin.username)
+            .then(res=>{
+                console.log('Deleted');
+                alert('User deleted!!!!');
+                window.location.reload();
+            })
             .catch(err => console.log(err))
     }
 

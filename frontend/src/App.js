@@ -13,8 +13,8 @@ function App() {
             SII SYSTEM</h2>
             <div className="row">
 
-                <CreateAdmin createAdmin/>
-                {/* <ViewAdmin viewAdmin/> */}
+                {/* <CreateAdmin createAdmin/> */}
+                <ViewAdmin viewAdmin/>
 
             </div>
         </div> 

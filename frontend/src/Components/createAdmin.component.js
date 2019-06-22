@@ -35,7 +35,6 @@ export default class CreateAdmin extends Component{
             });
         }
 
-
         onSubmit (e){
             e.preventDefault();
     
@@ -51,7 +50,6 @@ export default class CreateAdmin extends Component{
                 alert('Cannot have empty fields');
             }else{
                 axios.get('http://localhost:4000/admin/'+ newAdmin.username)
-                // .then(res => console.log(res.data))
                 .then(res => {
                     var user = JSON.stringify(res.data);                 
                     console.log(user); 
@@ -61,7 +59,7 @@ export default class CreateAdmin extends Component{
                         axios.post('http://localhost:4000/admin/create', newAdmin)
                         .then(res => console.log(res.data))
                         .then(data => {
-                            alert('Admin registered successfullqqy');                 
+                            alert('Admin registered successfully');                 
                         })
                         .catch(err => {
                             console.log(e);

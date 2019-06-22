@@ -2,7 +2,8 @@ import React from 'react';
 import {BrowserRouter, Router,Link} from "react-router-dom";
 import './App.css';
 import "bootstrap/dist/css/bootstrap.min.css"
-import CreateAdmin from './Components/createAdmin.component'
+import CreateAdmin from './Components/createAdmin.component';
+import ViewAdmin from './Components/viewAdmin.component';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
             <div className="row">
 
                 <CreateAdmin createAdmin/>
+                {/* <ViewAdmin viewAdmin/> */}
 
             </div>
         </div> 

@@ -28,19 +28,22 @@ export default class AddSubmission extends Component {
         });
     }
 
+
+
     onSubmit(e) {
         e.preventDefault();
 
         const newSubmission = {
             StudentID: this.state.StudentID,
             Date: this.state.Date,
-
         }
+
 
         if (newSubmission.StudentID == '' || newSubmission.Date == '') {
             alert('Cannot have empty fields');
         }
         else {
+
             axios.post('http://localhost:4000/submission/', newSubmission)
                 .then(res => console.log(res.data))
                 .then(data => {
@@ -49,7 +52,7 @@ export default class AddSubmission extends Component {
                 .catch(err => {
                     console.log(e);
                 });
-            
+
         }
 
     }
@@ -73,7 +76,7 @@ export default class AddSubmission extends Component {
                     </div>
 
 
-                    <button type="submit" className="btn btn-primary ml-5">Create</button>
+                    <button type="submit" className="btn btn-primary ml-5">Add</button>
                 </form>
             </div>
         );

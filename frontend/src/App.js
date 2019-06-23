@@ -10,6 +10,7 @@ import ViewExam from "./Components/exam/viewExam.component";
 import StudentRegister from './Components/Students/studentRegister.component';
 import ViewStudent from './Components/Students/viewStudents.component';
 import AddSubmission from './Components/Students/addSubmission.component';
+import ViewSubmissions from './Components/Students/viewSubmissions.component';
 
 
 function App() {
@@ -25,7 +26,9 @@ function App() {
 
           {/* <CreateCourse createCourse/> */}
           {/* <ViewCourse viewCourse/> */}
-          <ViewExam ViewExam />
+          {/* <ViewExam ViewExam /> */}
+          {/* <ViewSubmissions ViewSubmissions /> */}
+          <StudentRegister StudentRegister/>
         </div>
       </div>
     </BrowserRouter>

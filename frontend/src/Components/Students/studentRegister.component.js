@@ -68,8 +68,17 @@ export default class StudentRegister extends Component {
                 .catch(err => {
                     console.log(e);
                 });
+
+            this.setState({
+                email: '',
+                firstName: '',
+                lastName: '',
+                password: '',
+                studentID: ''
+            });
         }
-        
+
+
     }
 
     render() {
@@ -78,7 +87,7 @@ export default class StudentRegister extends Component {
                 <form onSubmit={this.onSubmit}>
                     <div className="form-group col-sm-4">
                         <label>Email</label>
-                        <input type="text" className="form-control" value={this.state.email} onChange={this.onChangeEmail} />
+                        <input type="email" className="form-control" value={this.state.email} onChange={this.onChangeEmail} />
                     </div>
                     <div className="form-group col-sm-4">
                         <label>First Name</label>
@@ -90,7 +99,7 @@ export default class StudentRegister extends Component {
                     </div>
                     <div className="form-group col-sm-4">
                         <label>Password</label>
-                        <input type="text" className="form-control" value={this.state.password} onChange={this.onChangePW} />
+                        <input type="password" className="form-control" value={this.state.password} onChange={this.onChangePW} />
                     </div>
                     <div className="form-group col-sm-4">
                         <label>studentID</label>

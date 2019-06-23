@@ -7,6 +7,10 @@ import ViewAdmin from "./Components/Admin/viewAdmin.component";
 import CreateCourse from "./Components/Course/createCourse.component";
 import ViewCourse from "./Components/Course/viewCourse.component";
 import ViewExam from "./Components/exam/viewExam.component";
+import StudentRegister from './Components/Students/studentRegister.component';
+import ViewStudent from './Components/Students/viewStudents.component';
+import AddSubmission from './Components/Students/addSubmission.component';
+
 
 function App() {
   return (

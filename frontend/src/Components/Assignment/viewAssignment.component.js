@@ -1,29 +1,29 @@
 import React, { Component } from "react";
 import axios from "axios";
-import ExamTableRow from "./exam.table";
+import AssignmentTableRow from "./assignment.table";
 
 export default class ViewExam extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      examsArr: []
+      assignments: []
     };
   }
 
   componentDidMount() {
     axios
-      .get("http://localhost:4000/exam/")
+      .get("http://localhost:4000/assignment/")
       .then(response => {
-        this.setState({ examsArr: response.data });
+        this.setState({ assignments: response.data });
       })
       .catch(function(error) {
         console.log(error);
       });
   }
 
-  examList() {
-    return this.state.examsArr.map(function(currentExam, i) {
-      return <ExamTableRow exam={currentExam} key={i} />;
+  assignmentList() {
+    return this.state.assignments.map(function(currentAssignment, i) {
+      return <AssignmentTableRow exam={currentAssignment} key={i} />;
     });
   }
 
@@ -33,14 +33,16 @@ export default class ViewExam extends Component {
         <table className="table table-striped">
           <thead>
             <tr>
-              <th>examId</th>
-              <th>studentId</th>
+              <th>assignmentExamCode</th>
+              <th>description</th>
+              <th>courseCode</th>
+              <th>typeOfExam</th>
               <th>marks</th>
               <th>deadlineDate</th>
               <th />
             </tr>
           </thead>
-          <tbody>{this.examList()}</tbody>
+          <tbody>{this.assignmentList()}</tbody>
         </table>
       </div>
     );

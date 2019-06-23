@@ -1,26 +1,37 @@
 import React, { Component } from "react";
-import ReactDOM from "react-dom";
 import axios from "axios";
 
-export default class addExam extends Component {
+export default class addAssignment extends Component {
   constructor(props) {
     super(props);
     this.onSubmit = this.onSubmit.bind(this);
     this.state = {
-      examId: "",
-      studentId: "",
+      assignmentExamCode: "",
+      description: "",
+      courseCode: "",
+      typeOfExam: "",
       marks: "",
       deadlineDate: ""
     };
   }
-  onChangeExamId = e => {
+  onChangeAssignmentCode = e => {
     this.setState({
-      examId: e.target.value
+      assignmentExamCode: e.target.value
     });
   };
-  onChangeStudentId = e => {
+  onChangeDescription = e => {
     this.setState({
-      studentId: e.target.value
+      description: e.target.value
+    });
+  };
+  onChangeCourseCode = e => {
+    this.setState({
+      courseCode: e.target.value
+    });
+  };
+  onChangeTypeOfExam = e => {
+    this.setState({
+      typeOfExam: e.target.value
     });
   };
   onChangeMarks = e => {
@@ -37,23 +48,27 @@ export default class addExam extends Component {
   onSubmit(e) {
     e.preventDefault();
 
-    const newExam = {
-      examId: this.state.examId,
-      studentId: this.state.studentId,
+    const newAssignment = {
+      assignmentExamCode: this.state.assignmentExamCode,
+      courseCode: this.state.courseCode,
+      description: this.state.description,
       marks: this.state.marks,
-      deadlineDate: this.state.deadlineDate
+      deadlineDate: this.state.deadlineDate,
+      typeOfExam: this.state.typeOfExam
     };
 
     if (
-      newExam.examId == "" ||
-      newExam.studentId == "" ||
-      newExam.deadlineDate == "" ||
-      newExam.marks == ""
+      newAssignment.assignmentExamCode == "" ||
+      newAssignment.courseCode == "" ||
+      newAssignment.deadlineDate == "" ||
+      newAssignment.description == "" ||
+      newAssignment.marks == "" ||
+      newAssignment.typeOfExam == ""
     ) {
       alert("Cannot have empty fields");
     } else {
       axios
-        .post("http://localhost:4000/exam", newExam)
+        .post("http://localhost:4000/exam", newAssignment)
         .then(res => console.log(res.data))
         .then(data => {
           alert("Exam added successfully");
@@ -69,21 +84,39 @@ export default class addExam extends Component {
       <div className="container m-5 pb-5s">
         <form onSubmit={this.onSubmit}>
           <div className="form-group col-sm-4">
-            <label>examId</label>
+            <label>assignmentExamCode</label>
             <input
               type="text"
               className="form-control"
-              value={this.state.examId}
-              onChange={this.onChangeExamId}
+              value={this.state.assignmentExamCode}
+              onChange={this.onChangeAssignmentCode}
             />
           </div>
           <div className="form-group col-sm-4">
-            <label>studentId</label>
+            <label>courseCode</label>
             <input
               type="text"
               className="form-control"
-              value={this.state.studentId}
-              onChange={this.onChangeStudentId}
+              value={this.state.courseCode}
+              onChange={this.onChangeCourseCode}
+            />
+          </div>
+          <div className="form-group col-sm-4">
+            <label>description</label>
+            <input
+              type="text"
+              className="form-control"
+              value={this.state.description}
+              onChange={this.onChangeDescription}
+            />
+          </div>
+          <div className="form-group col-sm-4">
+            <label>typeOfExam</label>
+            <input
+              type="text"
+              className="form-control"
+              value={this.state.typeOfExam}
+              onChange={this.onChangeTypeOfExam}
             />
           </div>
           <div className="form-group col-sm-4">
@@ -105,7 +138,7 @@ export default class addExam extends Component {
             />
           </div>
           <button type="submit" className="btn btn-primary ml-5">
-            Add Exam
+            Add Assignment
           </button>
         </form>
       </div>

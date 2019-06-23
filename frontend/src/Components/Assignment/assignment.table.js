@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
-class ExamTableRow extends Component {
+class AssignmentTableRow extends Component {
   constructor(props) {
     super(props);
     this.delete = this.delete.bind(this);
@@ -10,10 +10,10 @@ class ExamTableRow extends Component {
 
   delete() {
     axios
-      .delete("http://localhost:4000/exam/" + this.props.exam._id)
+      .delete("http://localhost:4000/assignment/" + this.props.assignment._id)
       .then(res => {
         console.log("Deleted");
-        alert("Exam deleted Successfully");
+        alert("Assignment deleted Successfully");
         window.location.reload();
       })
       .catch(err => console.log(err));
@@ -22,13 +22,15 @@ class ExamTableRow extends Component {
   render() {
     return (
       <tr>
-        <td>{this.props.exam.examId}</td>
-        <td>{this.props.exam.studentId}</td>
-        <td>{this.props.exam.marks}</td>
-        <td>{this.props.exam.deadlineDate}</td>
+        <td>{this.props.assignment.assignmentExamCode}</td>
+        <td>{this.props.assignment.description}</td>
+        <td>{this.props.assignment.courseCode}</td>
+        <td>{this.props.assignment.typeOfExam}</td>
+        <td>{this.props.assignment.marks}</td>
+        <td>{this.props.assignment.deadlineDate}</td>
         <td>
           <Link
-            to={"/update/" + this.props.exam._id}
+            to={"/update/" + this.props.assignment.id}
             className="btn btn-primary"
           >
             Edit
@@ -44,4 +46,4 @@ class ExamTableRow extends Component {
   }
 }
 
-export default ExamTableRow;
+export default AssignmentTableRow;

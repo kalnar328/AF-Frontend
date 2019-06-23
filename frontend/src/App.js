@@ -6,7 +6,7 @@ import CreateAdmin from "./Components/Admin/createAdmin.component";
 import ViewAdmin from "./Components/Admin/viewAdmin.component";
 import CreateCourse from "./Components/Course/createCourse.component";
 import ViewCourse from "./Components/Course/viewCourse.component";
-import ViewExam from "./Components/exam/viewExam.component";
+import ViewAssignment from "./Components/Assignment/viewAssignment.component";
 
 function App() {
   return (
@@ -18,10 +18,9 @@ function App() {
         <div className="row">
           {/* <CreateAdmin createAdmin/> */}
           {/* <ViewAdmin viewAdmin/> */}
-
           {/* <CreateCourse createCourse/> */}
           {/* <ViewCourse viewCourse/> */}
-          <ViewExam ViewExam />
+          {/* <ViewAssignment ViewAssignment /> */}
         </div>
       </div>
     </BrowserRouter>

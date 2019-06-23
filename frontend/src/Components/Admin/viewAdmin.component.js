@@ -1,33 +1,31 @@
-import React, {Component} from 'react';
-import axios from 'axios';
-import ReactDOM from 'react-dom';
-import {Link} from 'react-router-dom';
-import AdminTableRow from './admin.table'
+import React, { Component } from "react";
+import axios from "axios";
+import AdminTableRow from "./admin.table";
 
-export default class ViewAdmin extends Component{
+export default class ViewAdmin extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      admins: []
+    };
+  }
 
-    constructor(props){
-        super(props);
-        this.state = {
-            admins: []
-        }
-    }
-    
-    componentDidMount(){
-        axios.get('http://localhost:4000/admin/')
-            .then(response => {
-                this.setState({admins: response.data})
-            })
-            .catch(function(error){
-                console.log(error);
-            });
-    }
+  componentDidMount() {
+    axios
+      .get("http://localhost:4000/admin/")
+      .then(response => {
+        this.setState({ admins: response.data });
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+  }
 
-    adminList(){
-        return this.state.admins.map(function(currentAdmin, i){
-            return <AdminTableRow admin = {currentAdmin} key={i} />
-        })
-    }
+  adminList() {
+    return this.state.admins.map(function(currentAdmin, i) {
+      return <AdminTableRow admin={currentAdmin} key={i} />;
+    });
+  }
 
     render(){
         return(

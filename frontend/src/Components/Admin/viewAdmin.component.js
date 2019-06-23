@@ -30,7 +30,6 @@ export default class ViewAdmin extends Component{
     }
 
     render(){
-
         return(
             <div className="container">
                 <table className="table table-striped">

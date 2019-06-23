@@ -6,7 +6,8 @@ import CreateAdmin from './Components/Admin/createAdmin.component';
 import ViewAdmin from './Components/Admin/viewAdmin.component';
 import CreateCourse from './Components/Course/createCourse.component';
 import ViewCourse from './Components/Course/viewCourse.component';
-
+import Dashboard from './Components/dashboard';
+import ExamDashboard from './examDashboard';
 
 function App() {
   return (
@@ -18,9 +19,10 @@ function App() {
 
                 {/* <CreateAdmin createAdmin/> */}
                 {/* <ViewAdmin viewAdmin/> */}
-
                 {/* <CreateCourse createCourse/> */}
-                <ViewCourse viewCourse/>
+                {/* <ViewCourse viewCourse/> */}
+                {/* <Dashboard dash/> */}
+                <ExamDashboard exam/>
 
             </div>
         </div> 

@@ -17,6 +17,7 @@ export default class StudentTable extends Component {
             })
             .catch(err => console.log(err))
     }
+    
     render() {
         return (
             <tr>

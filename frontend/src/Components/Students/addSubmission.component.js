@@ -57,7 +57,6 @@ export default class AddSubmission extends Component {
 
     }
 
-
     render() {
         return (
             <div className="container m-5 pb-5s">

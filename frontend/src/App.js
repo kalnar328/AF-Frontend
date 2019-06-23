@@ -11,7 +11,7 @@ import StudentRegister from './Components/Students/studentRegister.component';
 import ViewStudent from './Components/Students/viewStudents.component';
 import AddSubmission from './Components/Students/addSubmission.component';
 import ViewSubmissions from './Components/Students/viewSubmissions.component';
-
+import SignUp from './Components/LogIn/login'; 
 
 function App() {
   return (
@@ -28,7 +28,7 @@ function App() {
           {/* <ViewCourse viewCourse/> */}
           {/* <ViewExam ViewExam /> */}
           {/* <ViewSubmissions ViewSubmissions /> */}
-          <StudentRegister StudentRegister/>
+          <SignUp SignUp/>
         </div>
       </div>
     </BrowserRouter>

@@ -7,32 +7,20 @@ export default class addExam extends Component {
     super(props);
     this.onSubmit = this.onSubmit.bind(this);
     this.state = {
-      assignmentExamCode: "",
-      description: "",
-      courseCode: "",
-      typeOfExam: "",
+      examId: "",
+      studentId: "",
       marks: "",
       deadlineDate: ""
     };
   }
-  onChangeAssignmentCode = e => {
+  onChangeExamId = e => {
     this.setState({
-      assignmentExamCode: e.target.value
+      examId: e.target.value
     });
   };
-  onChangeDescription = e => {
+  onChangeStudentId = e => {
     this.setState({
-      description: e.target.value
-    });
-  };
-  onChangeCourseCode = e => {
-    this.setState({
-      courseCode: e.target.value
-    });
-  };
-  onChangeTypeOfExam = e => {
-    this.setState({
-      typeOfExam: e.target.value
+      studentId: e.target.value
     });
   };
   onChangeMarks = e => {
@@ -50,21 +38,17 @@ export default class addExam extends Component {
     e.preventDefault();
 
     const newExam = {
-      assignmentExamCode: this.state.assignmentExamCode,
-      courseCode: this.state.courseCode,
-      description: this.state.description,
+      examId: this.state.examId,
+      studentId: this.state.studentId,
       marks: this.state.marks,
-      deadlineDate: this.state.deadlineDate,
-      typeOfExam: this.state.typeOfExam
+      deadlineDate: this.state.deadlineDate
     };
 
     if (
-      newExam.assignmentExamCode == "" ||
-      newExam.courseCode == "" ||
+      newExam.examId == "" ||
+      newExam.studentId == "" ||
       newExam.deadlineDate == "" ||
-      newExam.description == "" ||
-      newExam.marks == "" ||
-      newExam.typeOfExam == ""
+      newExam.marks == ""
     ) {
       alert("Cannot have empty fields");
     } else {
@@ -85,39 +69,21 @@ export default class addExam extends Component {
       <div className="container m-5 pb-5s">
         <form onSubmit={this.onSubmit}>
           <div className="form-group col-sm-4">
-            <label>assignmentExamCode</label>
+            <label>examId</label>
             <input
               type="text"
               className="form-control"
-              value={this.state.assignmentExamCode}
-              onChange={this.onChangeAssignmentCode}
+              value={this.state.examId}
+              onChange={this.onChangeExamId}
             />
           </div>
           <div className="form-group col-sm-4">
-            <label>courseCode</label>
+            <label>studentId</label>
             <input
               type="text"
               className="form-control"
-              value={this.state.courseCode}
-              onChange={this.onChangeCourseCode}
-            />
-          </div>
-          <div className="form-group col-sm-4">
-            <label>description</label>
-            <input
-              type="text"
-              className="form-control"
-              value={this.state.description}
-              onChange={this.onChangeDescription}
-            />
-          </div>
-          <div className="form-group col-sm-4">
-            <label>typeOfExam</label>
-            <input
-              type="text"
-              className="form-control"
-              value={this.state.typeOfExam}
-              onChange={this.onChangeTypeOfExam}
+              value={this.state.studentId}
+              onChange={this.onChangeStudentId}
             />
           </div>
           <div className="form-group col-sm-4">

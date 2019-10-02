@@ -22,15 +22,13 @@ class ExamTableRow extends Component {
   render() {
     return (
       <tr>
-        <td>{this.props.exam.assignmentExamCode}</td>
-        <td>{this.props.exam.description}</td>
-        <td>{this.props.exam.courseCode}</td>
-        <td>{this.props.exam.typeOfExam}</td>
+        <td>{this.props.exam.examId}</td>
+        <td>{this.props.exam.studentId}</td>
         <td>{this.props.exam.marks}</td>
         <td>{this.props.exam.deadlineDate}</td>
         <td>
           <Link
-            to={"/update/" + this.props.exam.id}
+            to={"/update/" + this.props.exam._id}
             className="btn btn-primary"
           >
             Edit

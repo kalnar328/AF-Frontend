@@ -33,10 +33,8 @@ export default class ViewExam extends Component {
         <table className="table table-striped">
           <thead>
             <tr>
-              <th>assignmentExamCode</th>
-              <th>description</th>
-              <th>courseCode</th>
-              <th>typeOfExam</th>
+              <th>examId</th>
+              <th>studentId</th>
               <th>marks</th>
               <th>deadlineDate</th>
               <th />

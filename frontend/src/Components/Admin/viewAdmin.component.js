@@ -27,22 +27,24 @@ export default class ViewAdmin extends Component {
     });
   }
 
-  render() {
-    return (
-      <div className="container">
-        <table className="table table-striped">
-          <thead>
-            <tr>
-              <th>Username </th>
-              <th>First Name</th>
-              <th>Last Name</th>
-              <th>Actions</th>
-              <th />
-            </tr>
-          </thead>
-          <tbody>{this.adminList()}</tbody>
-        </table>
-      </div>
-    );
-  }
+    render(){
+        return(
+            <div className="container">
+                <table className="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Username </th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Actions</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {this.adminList()}
+                    </tbody>
+                </table>
+            </div>
+        );
+    }
 }

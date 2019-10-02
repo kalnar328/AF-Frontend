@@ -6,7 +6,7 @@ import CreateAdmin from "./Components/Admin/createAdmin.component";
 import ViewAdmin from "./Components/Admin/viewAdmin.component";
 import CreateCourse from "./Components/Course/createCourse.component";
 import ViewCourse from "./Components/Course/viewCourse.component";
-import ViewAssignment from "./Components/Assignment/viewAssignment.component";
+
 
 function App() {
   return (
@@ -20,7 +20,6 @@ function App() {
           {/* <ViewAdmin viewAdmin/> */}
           {/* <CreateCourse createCourse/> */}
           {/* <ViewCourse viewCourse/> */}
-          {/* <ViewAssignment ViewAssignment /> */}
         </div>
       </div>
     </BrowserRouter>

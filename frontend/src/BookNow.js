@@ -21,18 +21,9 @@ class bookNow extends React.Component {
    e.preventDefault();
    
    const rid = e.target.elements.city.value;
-  // const country = e.target.elements.country.value;
   const tickets = e.target.elements.tickets.value;
 
-  // const route = e.target.elements.route.value;
 
-//  console.log(rid);
-
-  // console.log(route);
-  // const api_calls =  await fetch(`http://localhost:8000/ticketsDetails/${route}`);
-  //  const data = await api_calls.json();
-  //  if(route){
-  // console.log(data);
   
 
    const api_calls =  await fetch(`http://localhost:8000/ticketsDetails/${rid}`);
@@ -55,13 +46,7 @@ class bookNow extends React.Component {
 
  }else{
   this.setState({
-    // temperature : undefined,
-    // city : undefined,
-    // country : undefined,
-    // humidity: undefined,
-    // description:undefined,
-    // c1: undefined,
-    // c2:undefined,
+
 
 
     route : undefined,
